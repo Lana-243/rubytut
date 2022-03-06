@@ -1,29 +1,23 @@
+QUESTION_QUANTITY = 3
+
 puts "Welcome to the quiz!"
 puts "You can test your knowledge by answering next questions!"
 
-QUIZ_QUANTITY = 3
-current_path = File.dirname(__FILE__)
-quiz_list = Dir.glob("data/*").shuffle!.first(QUIZ_QUANTITY)
+filenames = Dir[File.join(__dir__, "data", "*.txt")]
 
-questions = []
-answers = []
-quiz_list.each do |quiz_name|
-  file_path = "#{current_path}/#{quiz_name}"
-  quiz_text = File.readlines(file_path, chomp: true)
-  questions << quiz_text[0]
-  answers <<  quiz_text[1]
-end
-
+questions_data = filenames.map { |filename| File.readlines(filename, chomp: true) }
+quiz_questions_data = questions_data.sample(QUESTION_QUANTITY)
 points = 0
-for i in 0..(QUIZ_QUANTITY-1)
-  puts questions[i]
-  user_answer = gets.chomp
-  if answers[i] == user_answer
-    puts "Correct!"
+quiz_questions_data.each do |question, correct_answer|
+  puts question
+  user_answer = STDIN.gets.chomp
+  if correct_answer.upcase  == user_answer.upcase
     points += 1
+    puts "Correct!"
   else
-    puts "Wrong answer. Correct answer: #{answers[i]}"
+    puts "Wrong answer."
+    puts "Correct answer: #{correct_answer}"
   end
 end
 
-puts "The end! You earned #{points} points from #{QUIZ_QUANTITY}"
+puts "The end! You earned #{points} points from #{quiz_questions_data.length}"
