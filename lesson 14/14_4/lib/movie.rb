@@ -1,9 +1,13 @@
 class Movie
-  attr_accessor :title, :director, :first_screening_year
+  attr_reader :title, :director, :year
 
-  def initialize(title, director, first_screening_year)
+  def initialize(title, director, year)
     @title = title
     @director = director
-    @first_screening_year = first_screening_year
+    @year = year
+  end
+
+  def info
+    "\"#{@title}\" (#{@year})"
   end
 end
