@@ -1,5 +1,12 @@
 def happy_birthday(name, age, text)
-  "Dear #{name},\n\nHappy birthday!\nYou are #{age} today\n\n#{text}"
+  <<~HEREDOC
+    Dear #{name},
+  
+    Happy birthday!
+    You are #{age} today
+  
+    #{text}
+  HEREDOC
 end
 
 user1 = {
