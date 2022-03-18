@@ -1,8 +1,7 @@
 current_path = File.dirname(__FILE__)
 
 face_files = ['forehead', 'eyes', 'nose', 'mouth']
-face_paths = face_files.map { |file| "#{current_path}/data/#{file}.txt"}
-face = []
+face_paths = face_files.map { |file| "#{current_path}/data/#{file}.txt" }
 
 face = face_paths.map { |filename| File.readlines(filename, chomp: true).sample }
 
