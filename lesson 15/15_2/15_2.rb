@@ -1,11 +1,11 @@
-require_relative 'lib/movie'
+require_relative 'lib/movie_3'
 
 puts "Hello there!"
 puts "Lets check how well you know movie directors"
 filenames = Dir[File.join(__dir__, 'data', '*.txt')]
 
 questions_data = filenames.map { |filename| File.readlines(filename, chomp: true) }
-movies = questions_data.map { |title, director, year| Movie.new(title, director, year) }
+movies = questions_data.map { |title, director, year| Movie_3.new(title, director, year) }
 directors = movies.map { |movie| movie.director }.uniq
 
 puts "It's movie night!"

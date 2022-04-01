@@ -1,7 +1,7 @@
-require_relative 'lib/movie'
+require_relative 'lib/movie_1'
 
-movie1 = Movie.new("Kill Bill", "Tarantino", "1994")
-movie2 = Movie.new("Titanic", "James Cameron", "1997")
+movie1 = Movie_1.new("Kill Bill", "Tarantino", "1994")
+movie2 = Movie_1.new("Titanic", "James Cameron", "1997")
 
 puts movie1.director
 puts movie2.title

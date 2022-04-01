@@ -1,4 +1,4 @@
-require_relative 'lib/movie'
+require_relative 'lib/movie_2'
 
 QUESTION_QUANTITY = 3
 OPTION_QUANTITY = 4
@@ -8,7 +8,7 @@ puts "Lets check how well you know movie directors"
 filenames = Dir[File.join(__dir__, 'data', '*.txt')]
 
 questions_data = filenames.map { |filename| File.readlines(filename, chomp: true) }
-movies = questions_data.map { |title, director, year| Movie.new(title, director, year) }
+movies = questions_data.map { |title, director, year| Movie_2.new(title, director, year) }
 game_movies = movies.sample(QUESTION_QUANTITY)
 directors = movies.map { |movie| movie.director }.uniq
 
