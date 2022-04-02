@@ -1,9 +1,7 @@
-class Item
+class film < Item
   attr_reader :title, :price, :quantity
-
   def initialize(title, price, quantity)
-    @title = title
-    @price = price
-    @quantity = quantity
+    super
   end
+
 end
