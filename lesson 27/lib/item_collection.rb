@@ -2,7 +2,8 @@ class ItemCollection
 
   ITEM_TYPES = {
     movie: {dir: 'movies', class: Movie},
-    book: {dir: 'books', class: Book}
+    book: {dir: 'books', class: Book},
+    album: {dir: 'albums', class: Album}
   }
 
   def initialize(items = [])
