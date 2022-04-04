@@ -1,5 +1,5 @@
 class Book < Item
-  attr_reader :title, :price, :quantity
+  attr_accessor :title, :genre, :author
 
   def initialize(params)
     super
@@ -11,5 +11,4 @@ class Book < Item
   def to_s
     "Book \"#{@title}\", #{@genre}, author - #{@author}, #{super}"
   end
-
 end

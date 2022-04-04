@@ -29,3 +29,13 @@ items << Movie.new(
 )
 
 items.each { |item| puts item }
+
+film = Movie.new(title: 'Леон', director: 'Люк Бессон', price: 990)
+film.quantity = 5
+
+book = Book.new(title: 'Идиот', genre: 'роман', amount: 10)
+book.author = 'Федька Достоевский'
+book.author = 'Фёдор Достоевский'
+book.price =  1500
+puts film
+puts book

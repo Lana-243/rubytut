@@ -1,5 +1,5 @@
 class Item
-  attr_reader :price, :quantity
+  attr_accessor :price, :quantity
 
   def initialize(params)
     @price = params[:price]
@@ -9,4 +9,5 @@ class Item
   def to_s
     "#{@price} rub. (#{@quantity} left)"
   end
+
 end

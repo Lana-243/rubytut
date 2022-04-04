@@ -1,5 +1,5 @@
 class Movie < Item
-  attr_reader :title, :genre, :director
+  attr_accessor :title, :genre, :director
   def initialize(params)
     super
     @title = params[:title]
