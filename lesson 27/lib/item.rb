@@ -1,8 +1,7 @@
 class Item
-  attr_reader :title, :price, :quantity
+  attr_reader :price, :quantity
 
-  def initialize(title, price, quantity)
-    @title = title
+  def initialize(price, quantity)
     @price = price
     @quantity = quantity
   end
