@@ -2,10 +2,30 @@ require_relative 'lib/item'
 require_relative 'lib/book'
 require_relative 'lib/movie'
 
-b = Book.new("Happy Potter", "Fantasy", "J. K. Rowling", 570, 2)
+items = []
 
-puts b.to_s
+items << Book.new(
+  title: "Happy Potter",
+  genre: "Fantasy",
+  author: "J. K. Rowling",
+  price: 570,
+  quantity: 2
+)
 
-c = Movie.new("Avatar", "Fantasy", "J. Cameron", 700, 123)
+items << Book.new(
+  title: "Happy Potter2",
+  genre: "Fantasy2",
+  author: "J. K. Rowling2",
+  price: 5702,
+  quantity: 22
+)
 
-puts c
+items << Movie.new(
+  title: "Avatar",
+  genre: "Fantasy",
+  director: "J. Cameron",
+  price: 700,
+  quantity: 123
+)
+
+items.each { |item| puts item }
