@@ -1,8 +1,15 @@
 require_relative 'lib/item'
 require_relative 'lib/book'
 require_relative 'lib/movie'
+require_relative 'lib/item_collection'
 
-book = Book.from_file('./data/books/01.txt')
-movie = Movie.from_file('./data/movies/02.txt')
-puts book
-puts movie
+collection = ItemCollection.from_dir("#{File.dirname(__FILE__)}/data")
+
+collection.sort!(by: :price)
+
+collection.to_a.each do |item|
+  puts item
+end
+
+
+
