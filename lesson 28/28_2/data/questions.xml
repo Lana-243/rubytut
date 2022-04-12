@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<questions>
+  <question minutes="5" points="1">
+    <text>How many musketeers was there?</text>
+    <options>
+      <option>2</option>
+      <option correct="true">4</option>
+      <option>3</option>
+    </options>
+  </question>
+  <question minutes="3" points="2">
+    <text>How many centimeters are in decimeter??</text>
+    <options>
+      <option>10</option>
+      <option>11</option>
+      <option correct="true">10</option>
+    </options>
+  </question>
+  <question minutes="2" points="3">
+    <text>How many regions are in Russia?</text>
+    <options>
+      <option>42</option>
+      <option correct="true">85</option>
+      <option>80</option>
+    </options>
+  </question>
+  <question minutes="2" points="4">
+    <text>What is telephone code of Ukraine?</text>
+    <options>
+      <option correct="true">380</option>
+      <option>270</option>
+      <option>117</option>
+    </options>
+  </question>
+  <question minutes="2" points="4">
+    <text>What year did Rome fall?</text>
+    <options>
+      <option correct="true">380</option>
+      <option>562</option>
+      <option correct="true">410</option>
+    </options>
+  </question>
+</questions>
