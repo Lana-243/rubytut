@@ -10,10 +10,10 @@
     </options>
   </question>
   <question minutes="3" points="2">
-    <text>How many centimeters are in decimeter??</text>
+    <text>How many centimeters are in decimeter?</text>
     <options>
-      <option>10</option>
-      <option>11</option>
+      <option>100</option>
+      <option>1000</option>
       <option correct="true">10</option>
     </options>
   </question>

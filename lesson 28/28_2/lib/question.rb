@@ -1,10 +1,12 @@
 class Question
-  attr_reader :text, :answer, :answer_points
+  attr_reader :text, :answer, :options, :points, :time
 
-  def initialize(text, answer, answer_points)
+  def initialize(text, answer, options, points, time)
     @text = text
     @answer = answer
-    @answer_points = answer_points
+    @options = options
+    @points = points
+    @time = time
   end
 end
 
