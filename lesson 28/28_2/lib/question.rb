@@ -8,6 +8,10 @@ class Question
     @points = points
     @time = time
   end
+
+  def correct_answer?(answer)
+    @answer = answer
+  end
 end
 
 

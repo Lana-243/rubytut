@@ -24,43 +24,45 @@ doc.elements.each("questions/question") do |item|
   points = item.attributes["points"].to_i
   answer = ""
   options = []
+
   item.elements.each("options/option") do |option|
-    answer = option.text if option.attributes["correct"] = "true"
+    answer = option.text if option.attributes["correct"] == "true"
     options << option.text
   end
+
   questions << Question.new(text, answer, options, points, time)
 end
 
 file.close
 
-
 quiz_questions_data = questions.sample(QUESTION_QUANTITY).shuffle
 points = 0
 correct_answers = 0
-timeout =  false
 
 quiz_questions_data.each do |quiz_question|
 
-    puts quiz_question.text
-    quiz_question.options.shuffle.each { |option| puts option}
-    user_answer = ""
-    begin
-      Timeout::timeout quiz_question.time * 60 do
-        user_answer = STDIN.gets.chomp
-      end
-    rescue Timeout::Error
-      puts "You have spent too much time!"
-      puts "The game ends"
-      exit
+  puts quiz_question.text
+  quiz_question.options.shuffle.each { |option| puts option }
+  user_answer = ""
+
+  begin
+    Timeout::timeout quiz_question.time * 60 do
+      user_answer = STDIN.gets.chomp
     end
-    if quiz_question.answer == user_answer
-      correct_answers += 1
-      points += quiz_question.points.to_i
-      puts 'Correct!'
-    else
-      puts 'Wrong answer.'
-      puts "Correct answer: #{quiz_question.answer}"
-    end
+  rescue Timeout::Error
+    puts "You have spent too much time!"
+    puts "The game ends"
+    exit
+  end
+
+  if quiz_question.correct_answer?(user_answer)
+    correct_answers += 1
+    points += quiz_question.points.to_i
+    puts 'Correct!'
+  else
+    puts 'Wrong answer.'
+    puts "Correct answer: #{quiz_question.answer}"
+  end
 end
 
 puts 'The end!'
