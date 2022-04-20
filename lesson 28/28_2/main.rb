@@ -54,7 +54,7 @@ quiz_questions_data.each do |quiz_question|
     puts "The game ends"
     exit
   end
-
+  #there is an error with answer check
   if quiz_question.correct_answer?(user_answer)
     correct_answers += 1
     points += quiz_question.points.to_i
