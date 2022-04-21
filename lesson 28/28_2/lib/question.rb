@@ -10,7 +10,7 @@ class Question
   end
 
   def correct_answer?(answer)
-    @answer = answer
+    @answer == answer
   end
 end
 
