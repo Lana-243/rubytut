@@ -1,0 +1,13 @@
+require 'json'
+
+file = File.read("#{__dir__}/data/languages_stats.json", encoding: 'UTF-8')
+
+data_hash = JSON.parse(file)
+
+sorted_array = data_hash.sort_by { |language, stats| stats }.reverse
+
+puts "The most popular programming language: #{sorted_array[0][0]} (#{sorted_array[0][1]})"
+
+sorted_array.each.with_index(1) do |language, index|
+  puts "#{index}: #{language[0]} (#{language[1]})"
+end
