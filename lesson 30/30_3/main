@@ -5,18 +5,24 @@ filenames = Dir[File.join(__dir__, 'data', '*.txt')]
 
 wardrobe = Wardrobe.new(filenames)
 
-puts wardrobe.garment_types
-puts wardrobe.garments_of_type('Pants')
+# weather = 1
+# puts wardrobe.suitable_garments(weather)
 
-a = Garment.new('shorts', 'pants', '(-1, +20)')
+puts 'Welcome to program that will help you choose your clothes!'
 
-puts a.suitable_for_weather?(19)
-puts a.suitable_for_weather?(21)
-puts a.suitable_for_weather?(1)
-puts a.suitable_for_weather?(0)
-puts a.suitable_for_weather?(-1)
-puts a.suitable_for_weather?(-2)
+answer = -100
+until answer.between?(-40, 40)
+  puts 'What temperature is it today?'
+  answer = STDIN.gets.chomp
+  #I cannot use to_i straight away as any string will return zero
+  answer = if answer == '0'
+             0
+           elsif answer.to_i == 0
+             -100
+           else
+             answer.to_i
+           end
+end
 
-weather = 1
-puts wardrobe.suitable_garments(weather)
-puts wardrobe.clothes_by_type
+puts 'Wardrobe that is suitable for this weather:'
+puts wardrobe.suitable_garments(answer)
