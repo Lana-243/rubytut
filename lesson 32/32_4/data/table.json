@@ -1,0 +1,72 @@
+{
+  "H":{
+    "number": 1,
+    "name": "Водород",
+    "density": 0.000084,
+    "year": 1766,
+    "discoverer": "Cavendish"
+  },
+  "He":{
+    "number": 2,
+    "name": "Helium",
+    "density": 0.000018,
+    "year": 1895,
+    "discoverer": "Lockyer, Janssen, Ramsay"
+  },
+  "Li":{
+    "number": 3,
+    "name": "Lithium",
+    "density": 0.534,
+    "year": 1817,
+    "discoverer": "Arfwedson"
+  },
+  "Be":{
+    "number": 4,
+    "name": "Beryllium",
+    "density": 1.85,
+    "year": 1797,
+    "discoverer": "Vauquelin"
+  },
+  "B":{
+    "number": 5,
+    "name": "Boron",
+    "density": 2.34,
+    "year": 1808,
+    "discoverer": "Davy, Gay-Lussac"
+  },
+  "C":{
+    "number": 6,
+    "name": "Carbon",
+    "density": 2.267,
+    "year": "unknown",
+    "discoverer": "unknown"
+  },
+  "N":{
+    "number": 7,
+    "name": "Nitrogen",
+    "density": 0.00125,
+    "year": 1772,
+    "discoverer": "Rutherford"
+  },
+  "O":{
+    "number": 8,
+    "name": "Oxygen",
+    "density": 0.001429,
+    "year": 1774,
+    "discoverer": "Priestley, Scheele"
+  },
+  "F":{
+    "number": 9,
+    "name": "Fluorine",
+    "density": 0.001696,
+    "year": 1886,
+    "discoverer": "Moissan"
+  },
+  "Ne":{
+      "number": 10,
+      "name": "Neon",
+      "density": 0.0009002,
+      "year": 1898,
+      "discoverer": "Ramsay, Travers"
+    }
+}
