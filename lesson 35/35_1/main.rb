@@ -1,34 +1,52 @@
 require 'uri'
 require 'net/http'
 require 'rexml/document'
-require_relative 'forecast'
+require_relative 'lib/forecast'
 
-# CLOUDINESS = %w[Ясно Малооблачно Облачно Пасмурно].freeze
-#
-# uri = URI.parse('https://www.meteoservice.ru/en/export/gismeteo?point=37')
-#
-# response = Net::HTTP.get_response(uri)
-#
-# doc = REXML::Document.new(response.body)
-#
-# city_name = URI.decode_www_form_component(
-#   doc.root.elements['REPORT/TOWN'].attributes['sname']
-# )
-#
-# forecast = doc.root.elements['REPORT/TOWN/FORECAST']
-#
-# min_temp = forecast.elements['TEMPERATURE'].attributes['min']
-# max_temp = forecast.elements['TEMPERATURE'].attributes['max']
-#
-# max_wind = forecast.elements['WIND'].attributes['max']
-#
-# clouds_index = forecast.elements['PHENOMENA'].attributes['cloudiness'].to_i
-# clouds = CLOUDINESS[clouds_index]
-#
-# puts city_name
-# puts "Температура — от #{min_temp} до #{max_temp} С"
-# puts "Ветер #{max_wind} м/с"
-# puts clouds
-#
-a = Forecast.forecast_reader('https://www.meteoservice.ru/en/export/gismeteo?point=37')
-puts a.city_name
+file_name = File.join(__dir__, '/data/city_url.xml')
+file = File.new(file_name, "r:UTF-8")
+
+begin
+  doc_cities = REXML::Document.new(file)
+rescue REXML::ParseException => e
+  puts "XML file has errors in it"
+  abort e.message
+end
+
+file.close
+
+cities = {}
+doc_cities.elements.each("cities/city") do |item|
+  city_name = item.attributes["name"]
+  city_url = item.attributes["url"]
+  cities[city_name] = city_url
+end
+
+city_names = cities.keys
+
+puts 'Which city would you like to have a forecast for?'
+city_names.each.with_index(1) { |name, index| puts "#{index}: #{name}" }
+city_index = STDIN.gets.to_i
+until city_index.between?(1, city_names.size)
+  city_index = gets.to_i
+  puts "Enter a number from 1 to #{city_names.size}"
+end
+
+city_name = city_names[city_index - 1]
+city_url = cities[city_name]
+
+response = Net::HTTP.get_response(URI.parse(city_url))
+doc = REXML::Document.new(response.body)
+
+forecast_nodes = doc.root.elements['REPORT/TOWN'].elements.to_a
+
+puts city_name
+puts
+
+forecast_nodes.each do |node|
+  puts Forecast.from_xml(node)
+  puts
+end
+
+
+

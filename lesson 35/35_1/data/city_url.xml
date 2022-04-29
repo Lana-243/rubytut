@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<cities>
+  <city name='Moscow' url='https://xml.meteoservice.ru/export/gismeteo/point/37.xml'></city>
+  <city name='Perm' url='https://xml.meteoservice.ru/export/gismeteo/point/59.xml'></city>
+  <city name='St. Petersburg' url='https://xml.meteoservice.ru/export/gismeteo/point/69.xml'></city>
+  <city name='Novosibirsk' url='https://xml.meteoservice.ru/export/gismeteo/point/99.xml'></city>
+  <city name='Orel' url='https://xml.meteoservice.ru/export/gismeteo/point/115.xml'></city>
+  <city name='Chita' url='https://xml.meteoservice.ru/export/gismeteo/point/121.xml'></city>
+  <city name='Bratsk' url='https://xml.meteoservice.ru/export/gismeteo/point/141.xml'></city>
+  <city name='Krasnodar' url='https://xml.meteoservice.ru/export/gismeteo/point/199.xml'></city>
+</cities>
