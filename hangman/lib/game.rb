@@ -1,9 +1,8 @@
 class Game
-
   TOTAL_ERRORS_ALLOWED = 7
 
   def initialize(word)
-    @letters = word.chars.map(&:capitalize)
+    @letters = word.upcase.chars
     @user_guesses = []
   end
 

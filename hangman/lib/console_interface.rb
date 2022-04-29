@@ -1,5 +1,4 @@
 class ConsoleInterface
-
   FIGURES =
     Dir["#{__dir__}/../data/figures/*.txt"].
     sort.
@@ -29,7 +28,7 @@ class ConsoleInterface
   end
 
   def word_to_show
-    @game.letters_to_guess.map { |letter| letter || "__" }.join(" ")
+    @game.letters_to_guess.map { |letter| letter || '__' }.join(' ')
   end
 
   def errors_to_show

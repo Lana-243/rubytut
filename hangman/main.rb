@@ -3,7 +3,7 @@ require_relative 'lib/game'
 
 puts 'Всем привет!'
 
-file_path = File.join(__dir__, '/data/words.txt')
+file_path = File.join(__dir__, 'data', 'words.txt')
 word = File.readlines(file_path, encoding: 'UTF-8', chomp: true).sample
 game = Game.new(word)
 console_interface = ConsoleInterface.new(game)
