@@ -2,8 +2,8 @@ class Item
   attr_accessor :price, :quantity
 
   def initialize(params)
-    @price = params[:price]
-    @quantity = params[:quantity]
+    @price = params[:price].to_i
+    @quantity = params[:quantity].to_i
   end
 
   def to_s

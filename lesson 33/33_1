@@ -1,0 +1,25 @@
+**Schema (SQLite v3.30)**
+
+CREATE  TABLE "main"."people" ("name" TEXT, "phone" TEXT, "email" TEXT);
+
+INSERT INTO people VALUES('Альфред Бедросов', '+7 999 010-10-00', 'alfie@gmail.com ');
+
+INSERT INTO people VALUES('Полина Викинг', '+7 910 158-92-01', 'pollie@gmail.com ');
+
+INSERT INTO people VALUES('Степан Миядзаки', '+7 895 150-43-11', 'stepka@gmail.com ')
+
+---
+
+    **Query #1**
+
+SELECT * FROM people;
+
+| name             | phone            | email             |
+| ---------------- | ---------------- | ----------------- |
+| Альфред Бедросов | +7 999 010-10-00 | alfie@gmail.com   |
+| Полина Викинг    | +7 910 158-92-01 | pollie@gmail.com  |
+| Степан Миядзаки  | +7 895 150-43-11 | stepka@gmail.com  |
+
+---
+
+[View on DB Fiddle](https://www.db-fiddle.com/)

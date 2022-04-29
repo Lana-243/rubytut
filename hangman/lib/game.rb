@@ -3,7 +3,7 @@ class Game
   TOTAL_ERRORS_ALLOWED = 7
 
   def initialize(word)
-    @letters = word.chars
+    @letters = word.chars.map(&:capitalize)
     @user_guesses = []
   end
 
@@ -21,11 +21,7 @@ class Game
 
   def letters_to_guess
     @letters.map do |letter|
-      if @user_guesses.include?(normalize_letter(letter))
-        letter
-      else
-        nil
-      end
+      letter if @user_guesses.include?(normalize_letter(letter))
     end
   end
 
