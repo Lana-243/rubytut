@@ -9,7 +9,7 @@ class Book < Item
   end
 
   def to_s
-    "Book \"#{@title}\", #{@genre}, author - #{@author}, #{super}"
+    %(Book "#{@title}", #{@genre}, author - #{@author}, #{super})
   end
 
   def self.from_file(file_path)

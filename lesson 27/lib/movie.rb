@@ -8,7 +8,7 @@ class Movie < Item
   end
 
   def to_s
-    "Movie \"#{@title}\", #{@genre}, director - #{@director}, #{super}"
+    %(Movie "#{@title}", #{@genre}, director - #{@director}, #{super})
   end
 
   def self.from_file(file_path)

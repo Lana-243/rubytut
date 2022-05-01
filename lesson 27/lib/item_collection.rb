@@ -1,10 +1,11 @@
 class ItemCollection
-
   ITEM_TYPES = [
     {dir: 'movies', class: Movie},
     {dir: 'books', class: Book},
     {dir: 'albums', class: Album}
   ].freeze
+
+  attr_reader :items
 
   def self.from_dir(dir_path)
     items = []

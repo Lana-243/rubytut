@@ -10,7 +10,7 @@ class Album < Item
   end
 
   def to_s
-    "Album \"#{@title}\"(#{@year}), #{@genre}, author - #{@author}, #{super}"
+    %(Album "#{@title}"(#{@year}), #{@genre}, author - #{@author}, #{super})
   end
 
   def self.from_file(file_path)
