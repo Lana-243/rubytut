@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 5px;
+  color: #404040;
+}
+
+body {
+  font-family: Verdana;
+}
+
+.wrapper {
+  margin: 2em 40px;
+  font-size: 1.5em;
+}
+
+.image {
+  max-width: 50%;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+.extra_info ul {
+  list-style-type: none;
+  padding: 0.5em;
+  font-family: "Courier New", Courier, monospace;
+  list-style-position: outside;
+}
+
+.intro {
+  background: #5BC0DE;
+  font-style: italic;
+}
+
+.method ol {
+  list-style-position: inside;
+}
+
+.ingridients ul {
+  list-style-position: inside;
+  list-style-type: "- ";
+}
