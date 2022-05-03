@@ -11,6 +11,10 @@ h2 {
   color: rgb(42, 52, 57);
 }
 
+.wrapper {
+  margin: 2em 40px;
+}
+
 p {
   font-size: 14px;
   color: rgb(42, 52, 57);
