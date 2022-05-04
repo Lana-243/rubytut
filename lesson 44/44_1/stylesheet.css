@@ -1,0 +1,20 @@
+.message {
+  margin: 25px;
+  width: 350px;
+  border-width: 3.5px;
+  border-style: solid;
+  border-radius: 8px;
+  color: whitesmoke;
+  font-family: Verdana;
+  padding-left: 12px;
+}
+
+.message_info {
+  background-color: rgb(52, 187, 155);
+  border-color: rgb(45, 162, 136);
+}
+
+.message_error {
+  background-color: rgb(225, 91,124);
+  border-color: rgb(187, 78,105);
+}
