@@ -10,11 +10,13 @@ body {
   background-color: rgb(104, 135, 142);
   color: ghostwhite;
   padding: 15px;
+  margin: 15px;
 }
 
 .card_image {
   float: left;
   margin-right: 15px;
+  max-width: 150px;
 }
 
 .card_title {
