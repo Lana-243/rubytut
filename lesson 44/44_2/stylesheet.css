@@ -1,0 +1,34 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.wrapper {
+  width: 500px;
+}
+
+.card {
+  background-color: rgb(104, 135, 142);
+  color: ghostwhite;
+  padding: 15px;
+}
+
+.card_image {
+  float: left;
+  margin-right: 15px;
+}
+
+.card_title {
+
+}
+
+.card_text {
+  padding-left: 165px;
+}
+
+.card:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+
