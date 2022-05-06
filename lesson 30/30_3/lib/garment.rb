@@ -13,4 +13,8 @@ class Garment
   def suitable_for_weather?(temperature)
     (temperature >= @temperature_min) && (temperature <= @temperature_max)
   end
+
+  def to_s
+    "#{self.type}: #{self.title} #{self.temperature_min}..#{self.temperature_max}"
+  end
 end

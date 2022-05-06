@@ -23,7 +23,6 @@ class Wardrobe
   def suitable_garments(temperature)
     @clothes
       .select { |item| item.suitable_for_weather?(temperature) }
-      .map { |item| "#{item.title} (#{item.type}) #{item.temperature_min}..#{item.temperature_max}" }
       .join("\n")
   end
 
