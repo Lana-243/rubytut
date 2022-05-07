@@ -29,7 +29,7 @@ class Wardrobe
   def clothes_by_type
     @clothes
       .sort_by(&:type)
-      .map { |item| "#{item.type}: #{item.title} #{item.temperature_min}..#{item.temperature_max}" }
+      .map(&:to_s)
       .join("\n")
   end
 end
