@@ -1,0 +1,14 @@
+.column-1-2 {
+  width: 50%;
+  float: left;
+  width: 350px;
+}
+
+.website_name {
+  display: block;
+}
+
+.button {
+  display: block;
+  margin-top: 15px;
+}
