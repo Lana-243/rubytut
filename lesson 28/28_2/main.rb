@@ -1,43 +1,18 @@
 # frozen_string_literal: true
 require "rexml/document"
 require "timeout"
-require_relative 'lib/question'
-
-QUESTION_QUANTITY = 5
+require_relative "lib/question"
+require_relative "lib/quiz"
 
 puts 'Welcome to the quiz!'
 puts 'You can test your knowledge by answering next questions!'
 
 current_path = File.dirname(__FILE__)
-file_name = current_path + "/data/questions.xml"
 
-abort "Sorry, file questions.xml was not found" unless File.exist?(file_name)
-questions = []
+quiz = Quiz.new(5)
+quiz.read_questions(current_path)
 
-file = File.new(file_name)
-
-doc = REXML::Document.new(file)
-
-doc.elements.each("questions/question") do |item|
-  text = item.elements["text"].text
-  time = item.attributes["minutes"].to_i
-  points = item.attributes["points"].to_i
-  answer = ""
-  options = []
-
-  item.elements.each("options/option") do |option|
-    answer = option.text if option.attributes["correct"] == "true"
-    options << option.text
-  end
-
-  questions << Question.new(text, answer, options, points, time)
-end
-
-file.close
-
-quiz_questions_data = questions.sample(QUESTION_QUANTITY).shuffle
-points = 0
-correct_answers = 0
+quiz_questions_data = quiz.question_list
 
 quiz_questions_data.each do |quiz_question|
 
@@ -56,8 +31,8 @@ quiz_questions_data.each do |quiz_question|
   end
   #there is an error with answer check
   if quiz_question.correct_answer?(user_answer)
-    correct_answers += 1
-    points += quiz_question.points.to_i
+    quiz.add_correct_answers
+    quiz.add_points(quiz_question.points.to_i)
     puts 'Correct!'
   else
     puts 'Wrong answer.'
@@ -65,6 +40,4 @@ quiz_questions_data.each do |quiz_question|
   end
 end
 
-puts 'The end!'
-puts "Questions answered right: #{correct_answers} of #{quiz_questions_data.length}"
-puts "You earned #{points} points"
+puts quiz.ending_text
