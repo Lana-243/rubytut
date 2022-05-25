@@ -15,6 +15,6 @@ class Garment
   end
 
   def to_s
-    "#{self.type}: #{self.title} #{self.temperature_min}..#{self.temperature_max}"
+    "#{type}: #{title} #{temperature_min}..#{temperature_max}"
   end
 end

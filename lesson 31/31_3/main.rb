@@ -22,4 +22,4 @@ end
 
 chosen_movie = collection.movie_choice(director_choice)
 
-puts "And today I recommend this movie: #{chosen_movie.director} - #{chosen_movie.title} (#{chosen_movie.year})"
+puts "And today I recommend this movie: #{chosen_movie}"

@@ -1,0 +1,11 @@
+.wrapper {
+  height: 300px;
+  width: 500px;
+  background-image: url("bubbles.jpeg");
+  background-size: cover;
+}
+
+.main {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: floralwhite;
+}

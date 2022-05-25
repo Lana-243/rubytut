@@ -6,4 +6,8 @@ class Film
     @director = director
     @year = year
   end
+
+  def to_s
+    "#{@director} - #{@title} (#{@year})"
+  end
 end
