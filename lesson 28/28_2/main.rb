@@ -9,15 +9,11 @@ puts 'You can test your knowledge by answering next questions!'
 
 current_path = File.dirname(__FILE__)
 
-quiz = Quiz.new(5)
-quiz.read_questions(current_path)
+quiz = Quiz.read_questions(current_path, 5)
 
-quiz_questions_data = quiz.question_list
+quiz.question_list.each do |quiz_question|
 
-quiz_questions_data.each do |quiz_question|
-
-  puts quiz_question.text
-  quiz_question.options.shuffle.each { |option| puts option }
+  quiz_question.show_questions_and_options
   user_answer = ""
 
   begin
@@ -29,15 +25,8 @@ quiz_questions_data.each do |quiz_question|
     puts "The game ends"
     exit
   end
-  #there is an error with answer check
-  if quiz_question.correct_answer?(user_answer)
-    quiz.add_correct_answers
-    quiz.add_points(quiz_question.points.to_i)
-    puts 'Correct!'
-  else
-    puts 'Wrong answer.'
-    puts "Correct answer: #{quiz_question.answer}"
-  end
+
+  quiz.answer_check(quiz_question, user_answer)
 end
 
 puts quiz.ending_text

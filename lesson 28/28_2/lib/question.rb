@@ -12,6 +12,11 @@ class Question
   def correct_answer?(answer)
     @answer == answer
   end
+
+  def show_questions_and_options
+    puts @text
+    @options.shuffle.each { |option| puts option }
+  end
 end
 
 

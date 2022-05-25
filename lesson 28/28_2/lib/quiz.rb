@@ -1,14 +1,8 @@
 class Quiz
-  attr_accessor :questions, :points, :correct_answers
 
-  def initialize(question_quantity)
-    @questions = []
-    @points = 0
-    @correct_answers = 0
-    @question_quantity = question_quantity
-  end
+  attr_accessor :points, :question_list
 
-  def read_questions(path)
+  def self.read_questions(path, question_quantity)
     file_name = path + "/data/questions.xml"
 
     abort "Sorry, file questions.xml was not found" unless File.exist?(file_name)
@@ -16,6 +10,8 @@ class Quiz
     file = File.new(file_name)
 
     doc = REXML::Document.new(file)
+
+    questions = []
 
     doc.elements.each("questions/question") do |item|
       text = item.elements["text"].text
@@ -29,22 +25,32 @@ class Quiz
         options << option.text
       end
 
-      @questions << Question.new(text, answer, options, points, time)
+      questions << Question.new(text, answer, options, points, time)
     end
 
-    file.close
+    self.new(question_quantity, questions)
   end
 
-  def question_list
-    @questions.sample(@question_quantity).shuffle
+  def initialize(question_quantity, questions)
+    @points = 0
+    @correct_answers = 0
+    @question_quantity = question_quantity
+    @question_list = questions.sample(@question_quantity).shuffle
   end
 
-  def add_correct_answers
+  def add_points_and_correct_answers(points)
+    @points += points
     @correct_answers += 1
   end
 
-  def add_points(points)
-    @points += points
+  def answer_check(question, user_answer)
+    if question.correct_answer?(user_answer)
+      add_points_and_correct_answers(question.points.to_i)
+      puts 'Correct!'
+    else
+      puts 'Wrong answer.'
+      puts "Correct answer: #{question.answer}"
+    end
   end
 
   def ending_text
