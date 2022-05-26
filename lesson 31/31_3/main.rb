@@ -8,7 +8,7 @@ puts "Choose the director whose movie you would like to watch:"
 
 filenames = Dir[File.join(__dir__, 'data', '*.txt')]
 
-collection = FilmCollection.new(filenames)
+collection = FilmCollection.from_dir(filenames)
 
 collection.directors.each.with_index(1) do |director, index|
   puts "#{index}: #{director}"

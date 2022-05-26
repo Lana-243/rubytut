@@ -1,14 +1,15 @@
 require_relative 'film'
 
 class FilmCollection
-  def self.film_list(filenames)
-     filenames.map { |filename| File.readlines(filename, chomp: true) }
+  def self.from_dir(filenames)
+    collection = filenames.map { |filename| File.readlines(filename, chomp: true) }
+     self.new(collection)
   end
 
   attr_reader :collection
 
-  def initialize(filenames)
-    @collection = FilmCollection.film_list(filenames)
+  def initialize(collection)
+    @collection = collection
   end
 
   def films

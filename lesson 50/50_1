@@ -1,0 +1,14 @@
+1. Использовать форм хэлпер form_with с именованным параметром url
+
+2. authenticity_token нужен для того, чтобы рельсы могли убедиться, что запрос пришел из браузера через форму приложения. Это позволит создать защиту страницы от Cross-Site Request Forgery (CSRF) аттак.
+
+3. <form action="/users/5" accept-charset="UTF-8" method="post">
+     <input type="hidden" name="_method" value="patch" />
+     <label for="user_name">Name</label>
+     <input type="submit">OK</label>
+   </form>
+
+4. Client.create(name: params[:client][:name], surname: params[:client][:surname]),
+address: params[:client][:address]), city: params[:client][:city])
+
+5. добавить
