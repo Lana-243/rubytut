@@ -4,18 +4,24 @@ require 'rexml/document'
 def dollars_to_balance(rub, usd, usd_to_rub)
   rub_in_usd = (rub/usd_to_rub)
   usd_difference = usd - rub_in_usd
-  to_change = (usd_difference/2).to_f.round(2)
-  return to_change
+  (usd_difference/2).to_f.round(2)
 end
 
 def buy_or_sell(wallet)
-  wallet.positive? ? action = "sell" : action = "buy"
-  return action
+  wallet.positive? ?  "sell" :  "buy"
 end
 
+begin
 response = Net::HTTP.get_response(URI.parse("http://www.cbr.ru/scripts/XML_daily.asp"))
 doc = REXML::Document.new(response.body)
-usd_to_rub = doc.elements['//Valute[@ID="R01235"]'].get_text('Value').to_s.to_f
+usd_to_rub = doc.elements['//Valute[@ID="R01235"]']
+                .get_text('Value').to_s
+                .gsub(",", ".").to_f
+rescue SocketError
+  puts "You have no internet connection"
+  puts "Please enter data manually:"
+  usd_to_rub = gets.to_f
+end
 
 puts "How many roubles do you have?"
 input_rub = gets.to_f
