@@ -5,7 +5,7 @@ require 'film_collection.rb'
 describe FilmCollection do
   let(:collection) do
     filenames = Dir[File.join(__dir__, 'fixtures', '*.txt')]
-    FilmCollection.new(filenames)
+    FilmCollection.from_dir(filenames)
   end
 
   describe '#films' do
