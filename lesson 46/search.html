@@ -8,24 +8,21 @@
 <body>
 <div class="container">
   <h1>Video search</h1>
-  <div class="form column-1-2">
-    <form class="form" action="https://vimeo.com/search/" method="GET">
-      <label for="title" class="website_name">
-        <img src="youtube.png" class="logo">
-        <p>YouTube</p>
-      </label>
-      <input type="text" name="search_query" value="">
 
+  <div class="form column-1-2">
+    <form class="form" action="https://www.youtube.com/results" method="GET">
+      <img src="youtube.png" class="logo">
+      <label for="youtube" class="website_name">YouTube</label>
+      <input type="text" name="search_query" id="youtube">
       <input type="submit">
     </form>
-  </div><div class="form column-1-2">
-    <form action="https://www.youtube.com/results" method="GET">
-      <label for="title" class="website_name">
-        <img src="vimeo.png" class="logo">
-        <p>Vimeo</p>
-      </label>
-      <input type="text" name="search_query" value="">
+  </div>
 
+  <div class="form column-1-2">
+    <img src="vimeo.png" class="logo">
+    <form action="https://vimeo.com/search/" method="GET">
+      <label for="vimeo" class="website_name">Vimeo</label>
+      <input type="text" name="search_query" id="vimeo">
       <input type="submit">
     </form>
   </div>
