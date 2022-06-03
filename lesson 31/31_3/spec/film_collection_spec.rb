@@ -1,6 +1,6 @@
 require 'rspec'
 
-require 'film_collection.rb'
+require 'film_collection'
 
 describe FilmCollection do
   let(:collection) do

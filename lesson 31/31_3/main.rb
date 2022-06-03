@@ -20,6 +20,6 @@ until director_choice.between?(1, collection.directors_number)
   director_choice = STDIN.gets.to_i
 end
 
-chosen_movie = collection.movie_choice(director_choice)
+chosen_movie = collection.movie_choice(collection.directors[director_choice - 1])
 
 puts "And today I recommend this movie: #{chosen_movie}"

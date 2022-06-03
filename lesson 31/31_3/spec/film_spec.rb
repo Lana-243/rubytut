@@ -1,6 +1,6 @@
 require 'rspec'
 
-require 'film_collection.rb'
+require 'film'
 
 describe Film do
 
@@ -22,6 +22,13 @@ describe Film do
     it 'should return director of movie Avatar' do
       film = Film.new('Atlantis: The Lost Empire', 'Kirk Wise', '2001')
       expect(film.year).to eq '2001'
+    end
+  end
+
+  describe '#to_s' do
+    it 'should return director of movie Avatar' do
+      film = Film.new('Atlantis: The Lost Empire', 'Kirk Wise', '2001')
+      expect(film.to_s).to eq 'Kirk Wise - Atlantis: The Lost Empire (2001)'
     end
   end
 end

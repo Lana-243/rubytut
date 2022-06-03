@@ -21,7 +21,7 @@ class FilmCollection
     directors.length
   end
 
-  def movie_choice(director_choice)
-    @films.select { |film| film.director == self.directors[director_choice - 1] }.sample
+  def movie_choice(chosen_director)
+    @films.select { |film| film.director == chosen_director }.sample
   end
 end
