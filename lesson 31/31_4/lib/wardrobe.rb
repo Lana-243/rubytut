@@ -1,9 +1,9 @@
-require_relative 'garment1'
+require_relative 'garment'
 
 class Wardrobe
   def self.from_files(filenames)
     wardrobe = filenames.map { |filename| File.readlines(filename, chomp: true) }
-    clothes = wardrobe.map { |title, type, temperature_range| Garment1.new(title, type, temperature_range) }
+    clothes = wardrobe.map { |title, type, temperature_range| Garment.new(title, type, temperature_range) }
     self.new(clothes)
   end
 

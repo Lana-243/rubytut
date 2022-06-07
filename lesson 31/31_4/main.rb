@@ -1,4 +1,4 @@
-require_relative 'lib/garment1'
+require_relative 'lib/garment'
 require_relative 'lib/wardrobe'
 
 filenames = Dir[File.join(__dir__, 'data', '*.txt')]
