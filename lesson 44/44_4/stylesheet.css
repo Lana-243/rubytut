@@ -5,31 +5,40 @@
 
 body {
   font-family: Arial, sans-serif;
-  text-align: justify;
+  font-size: 2vw;
+  width: 100%;
 }
 
 .wrapper {
-  width: 600px;
-  margin: 30px;
+  margin: 2vw;
 }
 
 .header {
   text-align: center;
 }
 
+.physicist {
+  padding: 1vw;
+}
+
 .name {
-  margin: 20px 0px;
+  margin: 1vw 0px;
 }
 
 .portrait {
-  height: 150px;
-  margin: 0 0 7px 7px;
+  display: inline-block;
+  height: 20vw;
+  border: solid #404040 0.2vw;
+  border-radius: 10px;
 }
 
 .image_left {
   float: left;
+  margin-right: 7px;
 }
+
 .image_right {
   float: right;
+  margin-left: 7px;
 }
 
