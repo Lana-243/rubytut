@@ -4,7 +4,7 @@ require 'garment'
 
 describe Garment do
   let(:garment) do
-    Garment.new("Long sleeved blouse", "Upper body garment", "(+10, +25)")
+    Garment2.new("Long sleeved blouse", "Upper body garment", "(+10, +25)")
   end
 
   describe '#suitable_for_weather?' do
