@@ -1,7 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .wrapper {
 
 }
 
 .header-lg {
+  background-color: dodgerblue;
+  padding-bottom: 2vw;
+  padding-top: 2vw;
+  font: Helvetica Neue;
+}
 
+body {
+  font-family: Garamond, sans-serif;
+  font-size: 2vw;
+  width: 100%;
 }
