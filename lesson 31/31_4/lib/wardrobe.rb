@@ -14,9 +14,15 @@ class Wardrobe
   end
 
   def suitable_garments(temperature)
-    @clothes
-      .select { |item| item.suitable_for_weather?(temperature) }
-      .shuffle
-      .uniq(&:type)
+    garments =
+      @clothes
+        .select { |item| item.suitable_for_weather?(temperature) }
+        .shuffle
+        .uniq(&:type)
+    if garments.empty?
+      'There are no suitable garments for this weather'
+    else
+      garments
+    end
   end
 end

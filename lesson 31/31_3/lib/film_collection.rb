@@ -15,7 +15,7 @@ class FilmCollection
 
   def directors
     @films.map { |film| film.director }.uniq
-  end
+  end31_4
 
   def directors_number
     directors.length
