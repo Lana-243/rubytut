@@ -4,18 +4,62 @@
 }
 
 .wrapper {
-
-}
-
-.header-lg {
-  background-color: dodgerblue;
-  padding-bottom: 2vw;
-  padding-top: 2vw;
-  font: Helvetica Neue;
+  margin: 3vw;
 }
 
 body {
   font-family: Garamond, sans-serif;
   font-size: 2vw;
   width: 100%;
+  color: #404040;
+}
+
+.header-lg {
+  background-color: dodgerblue;
+  padding-bottom: 2vw;
+  padding-top: 2vw;
+  font-family: Helvetica Neue;
+  font-size: 5vw;
+  text-align: center;
+  color: black;
+}
+
+.header-sm {
+  padding-bottom: 2vw;
+  padding-top: 2vw;
+  font-family: Helvetica Neue;
+  font-size: 2.5vw;
+  text-decoration: underline;
+  color: black;
+}
+
+.picture {
+  width: 40%;
+  height: auto;
+  margin-top: 2vw;
+  margin-right: 2vw;
+  border: solid #404040;
+  border-radius: 10px;
+}
+
+.info-list {
+  list-style: square inside;
+  padding: 1vw;
+}
+
+.wiki-link {
+  margin-top: 2vw;
+}
+
+a:link, a:visited {
+  background-color: cornflowerblue;
+  color: black;
+  padding: 1.5vw 2vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: lightskyblue;
 }
