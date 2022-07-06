@@ -31,7 +31,7 @@ body {
   margin-right: 40px;
 }
 
-input[type=text] {
+.text_input {
   padding: 8px 20px;
   display: inline-block;
   border: 1px solid #ccc;
@@ -39,9 +39,8 @@ input[type=text] {
   box-sizing: border-box;
 }
 
-input[type=submit] {
+.submit_button {
   display: block;
-  width: 60%;
   background-color: #ffff;
   color: dimgray;
   padding: 8px 20px;
@@ -49,6 +48,3 @@ input[type=submit] {
   border: 2px solid dimgray;
   border-radius: 4px;
 }
-
-
-
