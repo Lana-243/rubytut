@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  margin: 3vw;
+  flex: 1;
+}
+
+.main_text {
+  width: 60%;
+  float: left;
+}
+
+.extra_text {
+  width: 40%;
+  float: right;
+}
+
+.container:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.header_lg {
+  border-style: dashed;
+  margin: 3vw;
+  text-align: center;
+}
+
+.margin-bottom {
+  margin-bottom: 2vw;
+}
+
+.bottom {
+  height: 50px;
+  bottom: 0;
+  background-color: dodgerblue;
+  color: white;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.image {
+  display: inline-block;
+  height: 20vw;
+  border-radius: 10px;
+}
+
+.image_left {
+  float: left;
+  margin-top: 2vw;
+  margin-right: 2vw;
+  height: 120px;
+  width: auto;
+}
+
+.image_right {
+  float: right;
+  margin-top: 2vw;
+  margin-left: 2vw;
+  height: 120px;
+  width: auto;
+}
